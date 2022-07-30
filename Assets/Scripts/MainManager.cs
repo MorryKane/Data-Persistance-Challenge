@@ -37,7 +37,7 @@ public class MainManager : MonoBehaviour
                 brick.onDestroyed.AddListener(AddPoint);
             }
         }
-        bestScoreText.text = ("Best Score: " + SaveManager.instance.playerName + ": " + SaveManager.instance.bestScore);
+        bestScoreText.text = ("Best Score: " + SaveManager.instance.bestPlayerName + ": " + SaveManager.instance.bestScore);
     }
 
     private void Update()
@@ -71,7 +71,8 @@ public class MainManager : MonoBehaviour
         if(m_Points > SaveManager.instance.bestScore)
         {
             SaveManager.instance.bestScore = m_Points;
-            bestScoreText.text = ("Best Score: " + SaveManager.instance.playerName + ": " + SaveManager.instance.bestScore);
+            SaveManager.instance.bestPlayerName = SaveManager.instance.playerName;
+            bestScoreText.text = ("Best Score: " + SaveManager.instance.bestPlayerName + ": " + SaveManager.instance.bestScore);
             SaveManager.instance.SaveBestScore();
         }
     }

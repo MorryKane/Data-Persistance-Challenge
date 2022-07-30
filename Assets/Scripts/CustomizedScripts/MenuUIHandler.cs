@@ -11,8 +11,7 @@ public class MenuUIHandler : MonoBehaviour
 
     void Start()
     {
-        nameInput.text = SaveManager.instance.playerName;
-        bestScoreText.SetText("Best Score: " + SaveManager.instance.playerName + ": " + SaveManager.instance.bestScore);
+        bestScoreText.SetText("Best Score: " + SaveManager.instance.bestPlayerName + ": " + SaveManager.instance.bestScore);
     }
 
 
@@ -24,8 +23,6 @@ public class MenuUIHandler : MonoBehaviour
     public void nameChanged()
     {
         SaveManager.instance.playerName = nameInput.text;
-        SaveManager.instance.SaveBestScore();
-        bestScoreText.SetText("Best Score: " + SaveManager.instance.playerName + ": " + SaveManager.instance.bestScore);
     }
 
     public void StartGame()

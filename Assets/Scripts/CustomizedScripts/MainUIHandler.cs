@@ -6,17 +6,6 @@ using UnityEngine.UI;
 
 public class MainUIHandler : MonoBehaviour
 {
-    void Awake()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
